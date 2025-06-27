@@ -4,15 +4,25 @@ A secure and scalable backend for an e-commerce application built with **Node.js
 
 ---
 
+## 🌐 Hosted API Base URL
+
+```
+https://ecommerce-backend-api-oqnz.onrender.com
+```
+
+Use this as the base URL for accessing all API endpoints.
+
+---
+
 ## 🚀 Features
 
-- ✅ User Authentication with JWT
-- ✅ Role-based Access Control (Admin/Seller/Customer)
-- ✅ Protected Routes with Middleware
-- ✅ Cart Management
-- ✅ Coupon Management
-- ✅ Product Listing & Creation
-- ✅ Order Placement
+* ✅ User Authentication with JWT
+* ✅ Role-based Access Control (Admin/Seller/Customer)
+* ✅ Protected Routes with Middleware
+* ✅ Cart Management
+* ✅ Coupon Management
+* ✅ Product Listing & Creation
+* ✅ Order Placement
 
 ---
 
@@ -22,7 +32,7 @@ A secure and scalable backend for an e-commerce application built with **Node.js
 git clone https://github.com/Naveen-KumarJ/ecommerce-backend-api.git
 cd ecommerce-backend-api
 npm install
-````
+```
 
 ---
 
@@ -47,6 +57,9 @@ npm start
 ---
 
 ## 🧾 API Endpoints
+
+All endpoints are prefixed with the base URL:
+`https://ecommerce-backend-api-oqnz.onrender.com`
 
 ### 👤 User
 
@@ -78,7 +91,7 @@ npm start
 
 ## 🔐 Authentication
 
-Add the token to `Authorization` header in protected routes:
+Add the token to the `Authorization` header for protected routes:
 
 ```
 Authorization: Bearer <your-token>
@@ -91,11 +104,14 @@ Authorization: Bearer <your-token>
 * **Node.js**
 * **Express.js**
 * **MongoDB**
-* **JWT** for auth
+* **JWT** for authentication
 * **CORS** enabled
 * **RBAC Middleware**
 
 ---
 
 ## 🤝 Contributing
+
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+---
