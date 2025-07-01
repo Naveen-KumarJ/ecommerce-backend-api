@@ -6,6 +6,12 @@ const dayjs = require("dayjs");
 var isBetween = require("dayjs/plugin/isBetween");
 dayjs.extend(isBetween);
 
+const RazorPay = require("razorpay");
+const razorpay = new RazorPay({
+  key_id: process.env.RAZOR_PAY_KEY_ID,
+  key_secret: process.env.RAZOR_PAY_KEY_SECRET,
+});
+
 const placeOrder = async (req, res) => {
   // Checking User Cart is available or Not
   const userCart = await cartModel
@@ -79,6 +85,16 @@ const placeOrder = async (req, res) => {
   }
 
   if (req.body.paymentMode === "ONLINE") {
+    const razorpayOrder = await razorpay.orders.create({
+      amount: grandTotal * 100,
+      currency: "INR",
+      receipt: `order_${Date.now()}`,
+    });
+    return res.json({
+      success: true,
+      message: "Razorpay order created. Awaiting payment.",
+      razorpayOrder,
+    });
   }
 
   await orderModel.create({
